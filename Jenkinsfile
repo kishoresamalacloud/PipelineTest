@@ -1,14 +1,23 @@
 pipeline {
     agent any
-    stages{
-        stage ('THis is branch example') {
+    environment {
+        DEPLOY_TO = 'production'
+    }
+    stages {
+        stage ('Deployed to PRODUCTION'){
             when {
-                expression {
-                    BRANCH_NAME ==~ /(production|staging)/
+                allOf {
+                    branch 'production'
+                    environment name: 'DEPLOY_TO', value: 'production'
                 }
             }
             steps {
-                echo "production deployment is successfull"
+                echo "NOT Deployed to PRODUCTIO"
+            }
+        }
+        stage ('This is alternative stage'){
+            steps {
+                echo 'Not Deployed to PRODUCTION'
             }
         }
     }
