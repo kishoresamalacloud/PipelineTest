@@ -8,9 +8,9 @@ pipeline {
             when {
                 environment name: 'DEPLOY_TO', value: 'production'
             }
-        }
-        steps {
-            echo "When condition is SUCCESSFULL!!!"
+            steps {
+                echo "When condition is SUCCESSFULL!!!"
+            }
         }
     }
 }
