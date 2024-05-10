@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('This is allOff condition'){
             when {
-                allOff {
+                allOf {
                     branch 'production'
                     environment name: 'DEPLOY_TO', value: 'production'
                 }
