@@ -11,8 +11,8 @@ pipeline {
             }
             steps {
                 echo "GitHub Credentials are ${GITHUB_CREDS}"
-                echo "UserId is ${GITHUB_CREDS_USR}"
-                echo "Password Is ${HITHUB_CREDS_PSW}"
+                echo "UserId is: ${GITHUB_CREDS_USR}"
+                echo "Password Is: ${HITHUB_CREDS_PSW}"
             }
         }
     }
