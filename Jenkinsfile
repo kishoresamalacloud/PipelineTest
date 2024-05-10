@@ -1,17 +1,14 @@
 pipeline {
     agent any
-    environment {
-        DEPLOY_TO = "prodcution"
-    }
-    stages {
-        stage ('This is WHEN-NOT_condition') {
+    stages{
+        stage ('THis is branch example') {
             when {
-                not {
-                    equals expected: "production", actual: "${DEPLOY_TO}"
+                expression {
+                    BRANCH_NAME ==~ /(production|staging)/
                 }
             }
             steps {
-                echo "successfully NOT CONDITION is Processed"
+                Echo "production deployment is successfull"
             }
         }
     }
