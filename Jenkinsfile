@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                Echo "production deployment is successfull"
+                echo "production deployment is successfull"
             }
         }
     }
