@@ -4,7 +4,7 @@ pipeline {
         DEPLOY_TO = 'production'
     }
     stages {
-        stage ('This is allOff condition'){
+        stage ('Deployed to PRODUCTION'){
             when {
                 allOf {
                     branch 'production'
@@ -12,10 +12,10 @@ pipeline {
                 }
             }
             steps {
-                echo "Successfully deployed to PRODUCTION"
+                echo "NOT Deployed to PRODUCTION"
             }
         }
-        stage ('This is alternative stage'){
+        stage ('NOT Deployed to PRODUCTION'){
             steps {
                 echo 'Not Deployed to PRODUCTION'
             }
