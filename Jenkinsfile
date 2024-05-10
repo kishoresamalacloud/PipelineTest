@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage ('this is env example') {
             steps {
-            echo "Hello THis is successfully executed"                
+            echo "Welcome ${name}"
+            echo "You have enrolled for ${course}-course"                
             }
         }
     }
