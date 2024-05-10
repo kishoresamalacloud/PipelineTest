@@ -1,9 +1,14 @@
 pipeline {
     agent any
-    stages {
-        stage('FIRST STAGE') {
+    stages{
+        stage ('THis is branch example') {
+            when {
+                expression {
+                    BRANCH_NAME ==~ /(production|staging)/
+                }
+            }
             steps {
-                echo ' this is first groovy script in pipelines'
+                echo "production deployment is successfull"
             }
         }
     }
