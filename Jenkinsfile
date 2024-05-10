@@ -12,10 +12,10 @@ pipeline {
                 }
             }
             steps {
-                echo "NOT Deployed to PRODUCTIO"
+                echo "NOT Deployed to PRODUCTION"
             }
         }
-        stage ('This is alternative stage'){
+        stage ('NOT Deployed to PRODUCTION'){
             steps {
                 echo 'Not Deployed to PRODUCTION'
             }
