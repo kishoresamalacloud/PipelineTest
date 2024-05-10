@@ -1,19 +1,16 @@
 pipeline {
-    agent any 
+    agent any
     environment {
-        name = "kishore"
-        course = "k8s"
+        DEPLOY_TO = production
     }
-    stages {
-        stage ('This is Credentials-Test') {
-            environment {
-                GITHUB_CREDS = credentials('Git-Creds-New')
+    stages{
+        stage ('When Example') {
+            when {
+                environment name: 'DEPLOY_TO' , value = 'production'
             }
-            steps {
-                echo "GitHub Credentials are ${GITHUB_CREDS}"
-                echo "UserId is: ${GITHUB_CREDS_USR}"
-                echo "Password Is: ${HITHUB_CREDS_PSW}"
-            }
+        }
+        steps {
+            echo "When condition is SUCCESSFULL!!!"
         }
     }
 }
