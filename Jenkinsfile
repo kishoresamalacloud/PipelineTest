@@ -4,9 +4,9 @@ pipeline {
         DEPLOY_TO = 'production'
     }
     stages{
-        stage ('When Example') {
+        stage ("When Example") {
             when {
-                environment name: 'DEPLOY_TO' , value = 'production'
+                environment name: 'DEPLOY_TO', value: = 'production'
             }
         }
         steps {
