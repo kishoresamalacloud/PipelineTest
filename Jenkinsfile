@@ -6,7 +6,9 @@ pipeline {
     }
     stages {
         stage ('this is env example') {
-            echo "Hello THis is successfully executed"
+            steps {
+            echo "Hello THis is successfully executed"                
+            }
         }
     }
 }
