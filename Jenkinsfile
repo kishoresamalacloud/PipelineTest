@@ -1,31 +1,18 @@
 pipeline {
-    agent any
+    agent any 
     environment {
         name = "kishore"
-        course = "Devops"
-        cloud = "AWS"
+        course = "k8s"
     }
     stages {
-        stage ('Output will be pavan - devops - gcp') {
+        stage ('This is Credentials-Test') {
             environment {
-                cloud = "GCP"
+                GITHUB_CREDS = credentials('Git-Creds-New')
             }
             steps {
-                echo "Welcome ${name}"
-                echo "You have enrolled for ${course}-course"
-                echo "You are certified in ${cloud}-cloud"
-            }
-        }
-        stage ('Output will be pavan - cloud - azure') {
-            environment {
-                name = "pavan"
-                course = "CLOUD"
-                cloud = "Azure"
-            }
-            steps {
-                echo "Welcome ${name}"
-                echo "You have enrolled for ${course}-course"
-                echo "You are certified in ${cloud}-cloud"              
+                echo "GitHub Credentials are ${GITHUB_CREDS}"
+                echo "UserId is ${GITHUB_CREDS_USR}"
+                echo "Password Is ${HITHUB_CREDS_PSW}"
             }
         }
     }
