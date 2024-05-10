@@ -1,10 +1,12 @@
 pipeline {
     agent any
+    environment {
+        name = "kishore"
+        course = "Devops"
+    }
     stages {
-        stage('FIRST STAGE') {
-            steps {
-                echo ' this is first groovy script in pipelines'
-            }
+        stage ('this is env example') {
+            echo " Hello THis is successfully executed"
         }
     }
 }
